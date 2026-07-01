@@ -1,5 +1,5 @@
 import{ BaseArticleContentBlock } from "./BaseArticleContentBlock.js";
-import { expect, test } from '@playwright/test';
+import { expect } from '@playwright/test';
 
 export class ArticleContentBlock extends BaseArticleContentBlock{
  constructor(page, userId = 0) {
@@ -42,10 +42,6 @@ export class ArticleContentBlock extends BaseArticleContentBlock{
     });
   }
 
-  async assertArticleTextIsVisible(text) {
-  await this.step(`Assert the article has correct text`, async () => {
-    await expect(this.page.getByText(text)).toBeVisible();
-  });
-}
+
 
 }

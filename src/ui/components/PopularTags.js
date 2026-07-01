@@ -1,6 +1,5 @@
 
 import{ BaseComponent } from "./BaseComponent.js";
-import { expect, test } from '@playwright/test';
 
 export class PopularTags extends BaseComponent{
  constructor(page, userId = 0) {

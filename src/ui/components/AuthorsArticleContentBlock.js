@@ -19,12 +19,22 @@ export class AuthorsArticleContentBlock extends BaseArticleContentBlock{
     });
   }
 
-  async assertArticleTagsAreVisible(tags) {
-    await this.step(`Assert the article has correct tags`, async () => {
-      for (let i = 0; i < tags.length; i++) {
-        await expect(this.page.getByRole('listitem').filter({ hasText: tags[i] })).toBeVisible();
-      }
-    });
-  }
+  // async assertArticleTagsAreVisible(tags) {
+  //   await this.step(`Assert the article has correct tags`, async () => {
+  //     for (let i = 0; i < tags.length; i++) {
+  //       await expect(this.page.getByRole('listitem').filter({ hasText: tags[i] })).toBeVisible();
+  //     }
+  //   });
+  // }
+
+  async assertArticleAuthorNameIsVisible(username) {
+  await this.step(
+    `Assert the article has correct author`,
+    async () => {
+      await expect(this.authorLinkInArticleHeader(username)).toBeVisible();
+    },
+  );
+}
+
 
 }

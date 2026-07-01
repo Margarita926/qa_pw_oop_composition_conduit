@@ -31,10 +31,10 @@ test('Logged in user can find own article by tag in the Tag Feed', async ({
   await homePage.open();
   await homePage.clickOnTagLink(articleWithOneTag.tags[0]);
 
-  await homePage.globalFeed.articleFeedItem.assertArticleTitleIsVisible(
+  await homePage.tagFeedTab.articleFeedItem.assertArticleTitleIsVisible(
     articleWithOneTag.title,
   );
-  await homePage.globalFeed.articleFeedItem.assertArticleAuthorNameIsVisible(
+  await homePage.tagFeedTab.articleFeedItem.assertArticleAuthorNameIsVisible(
     user.username,
   );
 });

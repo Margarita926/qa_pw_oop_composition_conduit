@@ -32,7 +32,7 @@ testParameters.forEach(({ tagsNumber, testNameEnding }) => {
 
       await internalViewArticlePage.authorsArticleContentBlock.assertArticleTitleIsVisible(article.title);
       await internalViewArticlePage.authorsArticleContentBlock.assertArticleTextIsVisible(article.text);
-      await internalViewArticlePage.authorsArticleContentBlock.assertArticleTagsAreVisible(article.tags);
+      await internalViewArticlePage.articleContentBlock.assertArticleTagsAreVisible(article.tags);
     });
   });
 });

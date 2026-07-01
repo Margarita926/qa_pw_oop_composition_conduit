@@ -1,10 +1,12 @@
 
 import{ BaseComponent } from "./BaseComponent.js";
-import { expect, test } from '@playwright/test';
+import{ArticleFeedItem} from "./ArticleFeedItem.js";
 
 export class TagFeedTab extends BaseComponent{
  constructor(page, userId = 0) {
     super(page, userId);
+    this.articleFeedItem = new ArticleFeedItem(page, userId);
+
 
  }
 }
