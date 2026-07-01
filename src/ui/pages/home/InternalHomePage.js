@@ -9,4 +9,13 @@ export class InternalHomePage extends BaseHomePage {
     this.header = new InternalHeader(this.page, userId);
     this.yourFeed = new YourFeedTab(this.page, userId);
   }
+
+  async clickOnTagLink(tag) {
+    await this.step(`Click on tag link '${tag}'`, async () => {
+      await this.popularTags.clickOnTagLink(tag);
+    });
+  }
+
 }
+
+
