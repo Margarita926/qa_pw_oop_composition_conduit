@@ -8,4 +8,10 @@ export class ExternalViewArticlePage extends BaseViewArticlePage {
     super(page, userId);
     this.authorsArticleContentBlock = new AuthorsArticleContentBlock(page, userId);
   }
+
+  async open(url) {
+    await this.step(`Open article page with url: ${url}`, async () => {
+      await this.page.goto(url);
+    });
+  }
 }

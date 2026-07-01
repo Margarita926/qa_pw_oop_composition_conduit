@@ -7,7 +7,7 @@ export class GlobalFeedTab extends BaseComponent {
 
   constructor(page, userId = 0) {
     super(page, userId);
-    this.#globalFeedLink = this.page.getByText('Global Feed')
+    this.#globalFeedLink = this.page.getByText('Global Feed');
     this.articleFeedItem = new ArticleFeedItem(this.page, userId);
   }
 

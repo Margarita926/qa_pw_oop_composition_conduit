@@ -17,6 +17,11 @@ export class InternalViewArticlePage extends BaseViewArticlePage {
     this.articleFeedItem = new ArticleFeedItem(page, userId);
 
   }
-
+  
+  async open(url) {
+    await this.step(`Open article page with url: ${url}`, async () => {
+      await this.page.goto(url);
+    });
+  }
   
 }
